@@ -1,0 +1,37 @@
+﻿@model AdoptAPet.Models.Cat
+<h2>Add a New Cat</h2>
+<form action="/Home/NewCat" method="post">
+    <table class="table">
+        <tr>
+            <td style="width: 120px">Name:</td>
+            <td><input type="text" name="name" style="width: 100%" /></td>
+        </tr>
+        <tr>
+            <td>Breed:</td>
+            <td><input type="text" name="breed" style="width: 100%" /></td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><input type="number" name="age" style="width: 100%" /></td>
+        </tr>
+        <tr>
+            <td>Image Link:</td>
+            <td><input type="text" name="image" style="width: 100%" /></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td><input type="radio" name="gender" value="male" /> Male &nbsp;<input type="radio" name="gender" value="female" /> Female</td>
+        </tr>
+        <tr>
+            <td>Bio:</td>
+            <td><input type="text" name="bio" style="height: 100px; width: 100%" /></td>
+        </tr>
+        <tr>
+            <td>Does this cat get along with other cats?</td>
+            <td><input type="radio" name="otherCat" value="true" /> Yes &nbsp;<input type="radio" name="otherCat" value="false" /> No</td>
+        </tr>
+        <tr>
+            <td><input type="submit" /></td>
+        </tr>
+    </table>
+</form>

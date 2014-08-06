@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("See All Pets", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <div class="dropdown" style="float: right; margin: 5px;">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                        View By Type
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/Home/IndexBySpecies/Cat">Cats</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/Home/IndexBySpecies/Dog">Dogs</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/Home/IndexBySpecies/Reptile">Reptiles</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/Home/IndexBySpecies/SmallAnimal">Small Animals</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navbar-collapse collapse">
+                <div class="dropdown" style="float: right; margin: 5px;">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                        Add New Pet
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/Home/NewCat">Cat</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/Home/NewDog">Dog</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/Home/NewReptile">Reptile</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/Home/NewSmallAnimal">Small Animal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <img src="/Images/mytitle.png" />
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

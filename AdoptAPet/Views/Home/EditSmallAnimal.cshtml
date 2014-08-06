@@ -1,0 +1,49 @@
+﻿@model AdoptAPet.Models.SmallAnimal
+<h2>Add a New Small Animal</h2>
+<form action="/Home/UpdateSmallAnimal/@Model.Id" method="post">
+    <table class="table">
+        <tr>
+            <td style="width: 120px">Name:</td>
+            <td><input type="text" name="name" style="width: 100%" value="@Model.Name"/></td>
+        </tr>
+        <tr>
+            <td>Breed:</td>
+            <td><input type="text" name="breed" style="width: 100%" value="@Model.Breed" /></td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><input type="number" name="age" style="width: 100%" value="@Model.Age"/></td>
+        </tr>
+        <tr>
+            <td>Image Link:</td>
+            <td><input type="text" name="image" style="width: 100%" value="@Model.Image"/></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            @if (Model.Gender == "Male")
+            {
+                <td><input type="radio" name="gender" value="Male" checked /> Male &nbsp;<input type="radio" name="gender" value="Female" /> Female</td>
+            }
+            else if (Model.Gender == "Female")
+            {
+                <td><input type="radio" name="gender" value="Male" /> Male &nbsp;<input type="radio" name="gender" value="Female" checked /> Female</td>
+            }
+            else
+            {
+                <td><input type="radio" name="gender" value="Male" /> Male &nbsp;<input type="radio" name="gender" value="Female" /> Female</td>
+            }
+        </tr>
+        </tr>
+        <tr>
+            <td>Bio:</td>
+            <td><input type="text" name="bio" style="height: 100px; width: 100%" value="@Model.Bio" /></td>
+        </tr>
+        <tr>
+            <td>Housing Need</td>
+            <td><input type="text" name="housing" style="width: 100%" value="@Model.Housing"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" /></td>
+        </tr>
+    </table>
+</form>

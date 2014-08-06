@@ -1,0 +1,49 @@
+﻿@model List<AdoptAPet.Models.Animal>
+<div class="container">
+    <div class="row clearfix">
+
+        <div class="col-md-12 column">
+            @{int col = 0;}
+            @foreach (var Animal in Model)
+            {
+                if (col == 0)
+                {
+                    @Html.Raw("<div class=\"row clearfix\">")
+                }
+                @Html.Raw("<div class=\"col-md-4 column\">")
+                if (@Animal.Species == AdoptAPet.Models.Animal.Type.Cat)
+                {
+                    @Html.Raw("<a href=\"/Home/CatDetails/")
+                }
+                if (@Animal.Species == AdoptAPet.Models.Animal.Type.Dog)
+                {
+                    @Html.Raw("<a href=\"/Home/DogDetails/")
+                }
+                if (@Animal.Species == AdoptAPet.Models.Animal.Type.Reptile)
+                {
+                    @Html.Raw("<a href=\"/Home/ReptileDetails/")
+                }
+                if (@Animal.Species == AdoptAPet.Models.Animal.Type.SmallAnimal)
+                {
+                    @Html.Raw("<a href=\"/Home/SmallAnDetails/")
+                }
+                @Animal.Id
+                @Html.Raw("\"/>")
+                @Html.Raw("<h3 class=\"link btn btn-default name-btn\">") @Animal.Name
+                @Html.Raw("</h3><img class=\"thumbnail index-img\" src=\"") @Animal.Image
+                @Html.Raw("\"/></a>")
+                @Html.Raw("</div>")
+                if (col == 2)
+                {
+                    col = 0;
+                    @Html.Raw("</div>")
+                }
+                else
+                {
+                    col++;
+                }
+            }
+        </div>
+    </div>
+</div>
+
